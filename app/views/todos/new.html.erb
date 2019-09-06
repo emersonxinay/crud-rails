@@ -1,0 +1,9 @@
+<h1>Sales#new</h1>
+<%= form_with model: @todo, local: true do |f| %>
+
+    <%= f.label :description %><br>
+    <%= f.text_field :description %><br>
+    <br>
+
+ <%=  f.submit 'crear'  %>
+<% end %>

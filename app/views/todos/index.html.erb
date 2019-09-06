@@ -1,0 +1,10 @@
+ <% @todos.each do |todo|%>
+  <div class="card text-center m-5 p-3">
+      <%= link_to todo.description, todo  %>
+
+      <%= link_to 'borrar', todo, method: :delete  %>
+  </div>
+  <% end %>
+  <div class="card text-left">
+      <%= link_to 'agregar algo', todos_new_path %>
+  </div>

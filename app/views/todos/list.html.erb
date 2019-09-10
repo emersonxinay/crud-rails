@@ -1,18 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
+    <div class="col">
+      <h1>compeltados</h1>
+        <% @todos_completed.each do |todo|%>
+          <%= todo.description  %> <br>
+        <% end %>
+    </div>
+    <div class="col">
+      <h1>no completados </h1>
+      <% @todos_incompleted.each do |todo|%>
+        <%= todo.description  %> <br>
+      <% end %>
+    </div>
   </div>
-  <div class="row">
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-    <div class="col">col</div>
-     <div class="col">col</div>
-  </div>
+
 </div>

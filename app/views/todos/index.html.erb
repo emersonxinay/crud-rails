@@ -1,13 +1,29 @@
- <% @todos.each do |todo|%>
-  <div class="card text-center m-5 p-3">
-      <%= link_to todo.description, todo  %>
+<div class="my-5 py-3">
 
-      <%= link_to 'borrar', todo, method: :delete  %>
-    
-      <%= link_to 'completar', todos_path, :id =>"editbar"%>
+  <% @todos.each do |todo|%>
+   <div class="card text-center m-3 p-1">
+       <%= link_to todo.description, todo  %>
 
-  </div>
-  <% end %>
-  <div class="card text-left">
-      <%= link_to 'agregar algo', todos_new_path %>
-  </div>
+       <%= link_to 'borrar', todo, method: :delete  %>
+       <% if todo.completed == true %>
+           <div class="badge badge-dark text-wrap" style="" >
+             tarea completada
+           </div>
+       <% else  %>
+     <button class="btn btn-outline-dark" type="button" name="button">
+       <%= link_to "completar", todos_completed_path(todo) %>
+     </button>
+
+
+         <% end %>
+
+
+         <%= link_to "edit", todos_edit_path(todo) %>
+   </div>
+   <% end %>
+   <div class="card text-left">
+       <%= link_to 'agregar algo', todos_new_path %>
+
+
+   </div>
+</div>

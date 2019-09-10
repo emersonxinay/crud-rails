@@ -3,6 +3,9 @@
       <%= link_to todo.description, todo  %>
 
       <%= link_to 'borrar', todo, method: :delete  %>
+    
+      <%= link_to 'completar', todos_path, :id =>"editbar"%>
+
   </div>
   <% end %>
   <div class="card text-left">
